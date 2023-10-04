@@ -71,6 +71,49 @@
 			}
 		]
 	},
-	{ "name": "International Support", "path": "#" },
-	{ "name": "About", "path": "#" }
+	{
+		"name": "International Support",
+		"path": "#",
+		"subNames": [
+			{
+				"subName": "Support",
+				"containes": [
+					"For International Students",
+					"For International Faculty"
+				]
+			},
+			{
+				"subName": "Partnerships",
+				"containes": [
+					"International Partnerships",
+					"Double-degree Programmes",
+					"Membership in Associations"
+				]
+			}
+		]
+	},
+	{
+		"name": "About",
+		"path": "#",
+		"subNames": [
+			{
+				"subName": "Who We Are",
+				"containes": [
+					"Facts and Figures",
+					"HSE in Rankings",
+					"Development Programme",
+					"HSE University History",
+					"Staff Directory"
+				]
+			},
+			{
+				"subName": "Buildings",
+				"containes": [
+					"HSE Buildings",
+					"Dormitories",
+					"Student Housing Office"
+				]
+			}
+		]
+	}
 ]

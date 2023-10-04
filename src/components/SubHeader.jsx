@@ -158,12 +158,12 @@ const SubHeader = () => {
       </Link>
     );
   };
-
   // portal for medium screens menu
   const PortalForMedScreensMenu = () => {
     return (
       <>
         {menuStatus &&
+          !smallScreenStatus &&
           createPortal(
             <div className={`min-w-full min-h-screen bg-slate-100 z-40 fixed `}>
               <div className={`flex items-center justify-center  py-3`}>
@@ -320,7 +320,9 @@ const SubHeader = () => {
       <>
         {smallScreenStatus &&
           createPortal(
-            <div className={`min-w-full min-h-screen bg-slate-100 z-40 fixed `}>
+            <div
+              className={`min-w-full min-h-screen bg-slate-100 z-40 fixed  `}
+            >
               <div className={`flex items-center justify-center  py-3`}>
                 <div className={`flex items-center justify-start w-[95%]`}>
                   <Logo />
@@ -431,36 +433,36 @@ const SubHeader = () => {
                 >
                   {tabsMap}
                 </div>
-                {hoveredName && (
-                  <div
-                    className={`absolute   w-[95%]  mx-auto  min-h-fit bg-slate-50 top-12 flex items-start justify-center py-3 shadow-lg shadow-slate-400  `}
-                    onMouseLeave={() => setHoveredName("")}
-                  >
-                    <div
-                      className={`max-w-4xl mx-auto w-full grid grid-cols-2 sm:w-[90%] md:max-w-3xl xl:max-w-4xl `}
-                    >
-                      <div className={``}>{subTabs}</div>
-                      {subNameContaines && subNameContaines.length > 0 && (
-                        <div
-                          className={`w-full flex items-center justify-start  flex-col  min-h-full  `}
-                        >
-                          <div
-                            className={`flex items-start justify-start space-y-4 flex-col pt-2 ps-4   w-full min-h-full  `}
-                          >
-                            {subNameContaines.map((el, idx) => (
-                              <p
-                                className={` text-[15px] font-light text-start  cursor-pointer w-full hover:text-blue-600 duration-150 `}
-                                key={idx}
-                              >
-                                {el}
-                              </p>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
+                {/* {hoveredName && ( */}
+                {/*   <div */}
+                {/*     className={`absolute   w-[95%]  mx-auto  min-h-fit bg-blue-500 top-12 flex items-start justify-center py-3 shadow-lg shadow-slate-400  `} */}
+                {/*     onMouseLeave={() => setHoveredName("")} */}
+                {/*   > */}
+                {/*     <div */}
+                {/*       className={`max-w-4xl mx-auto w-full grid grid-cols-2 sm:w-[90%] md:max-w-3xl xl:max-w-4xl `} */}
+                {/*     > */}
+                {/*       <div className={``}>{subTabs}</div> */}
+                {/*       {subNameContaines && subNameContaines.length > 0 && ( */}
+                {/*         <div */}
+                {/*           className={`w-full flex items-center justify-start  flex-col  min-h-full  `} */}
+                {/*         > */}
+                {/*           <div */}
+                {/*             className={`flex items-start justify-start space-y-4 flex-col pt-2 ps-4   w-full min-h-full  `} */}
+                {/*           > */}
+                {/*             {subNameContaines.map((el, idx) => ( */}
+                {/*               <p */}
+                {/*                 className={` text-[15px] font-light text-start  cursor-pointer w-full hover:text-blue-600 duration-150 `} */}
+                {/*                 key={idx} */}
+                {/*               > */}
+                {/*                 {el} */}
+                {/*               </p> */}
+                {/*             ))} */}
+                {/*           </div> */}
+                {/*         </div> */}
+                {/*       )} */}
+                {/*     </div> */}
+                {/*   </div> */}
+                {/* )} */}
               </div>
             </div>,
             document.getElementById("smallMenu"),
@@ -473,7 +475,7 @@ const SubHeader = () => {
   const BigScreensSearch = () => {
     return (
       <div
-        className={`h-full relative flex items-center justify-start max-sm:hidden  `}
+        className={`h-full  relative flex items-center justify-start max-sm:hidden  `}
       >
         <input
           className={` h-8 max-lg:w-full lg:w-[10px] xl:w-full   rounded-lg bg-slate-100/40 text-[15px] text-slate-100 font-thin placeholder:text-[16px] placeholder:font-thin placeholder:text-slate-100 ps-8 px-3 focus:outline-none `}
@@ -533,14 +535,14 @@ const SubHeader = () => {
       <div
         className={` container flex items-center justify-between mx-auto  sm:w-[90%] md:max-w-3xl xl:max-w-4xl  `}
       >
-        <div className={`  flex items-center justify-center sm:space-x-3  `}>
+        <div className={` md flex items-center justify-center sm:space-x-3  `}>
           <Logo />
           <div
             className={` hidden max-lg:flex items-center justify-center space-x-1 py-1 px-2 border border-slate-300 rounded-sm `}
             onClick={(e) => {
-              const screenSize = window.screen.availWidth;
+              const screenSize = window.innerWidth;
 
-              if (screenSize <= 640) {
+              if (screenSize <= 768) {
                 setSmallScreenStatus(!smallScreenStatus);
               } else {
                 dispatch(changeMenuStatus());

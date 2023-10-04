@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`   z-30 absolute top-0 min-w-full   h-fit md:h-10  bg-transparent  sm:border-b border-slate-100/60 max-md:py-1 py-6  `}
+      className={`   z-30 absolute top-0 min-w-full   h-fit md:h-10  bg-transparent  md:border-b border-slate-100/60 max-md:py-1 py-6  `}
       // onScroll={() => scrollHandler()}
     >
       {/* start md screens */}
@@ -59,7 +59,7 @@ const Header = () => {
           <SubHeader />
         </div>
         <div
-          className={` max-sm:hidden absolute container mx-auto  md:flex items-center justify-between sm:w-[90%] md:max-w-3xl xl:max-w-4xl  top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2  `}
+          className={` max-md:hidden absolute container mx-auto  md:flex items-center justify-between sm:w-[90%] md:max-w-3xl xl:max-w-4xl  top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2  `}
         >
           <div className="flex items-center justify-center h-full  space-x-2 xl:space-x-3  ">
             {tabsMap}
